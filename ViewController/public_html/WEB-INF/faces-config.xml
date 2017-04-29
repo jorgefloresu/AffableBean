@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<faces-config version="2.1" xmlns="http://java.sun.com/xml/ns/javaee">
+  <navigation-rule>
+    <from-view-id>/browse.jspx</from-view-id>
+    <navigation-case>
+      <from-outcome>query</from-outcome>
+      <to-view-id>/query.jspx</to-view-id>
+    </navigation-case>
+    <navigation-case>
+      <from-outcome>search</from-outcome>
+      <to-view-id>/search.jspx</to-view-id>
+    </navigation-case>
+  </navigation-rule>
+  <navigation-rule>
+    <from-view-id>/query.jspx</from-view-id>
+    <navigation-case>
+      <from-outcome>browse</from-outcome>
+      <to-view-id>/browse.jspx</to-view-id>
+    </navigation-case>
+  </navigation-rule>
+  <navigation-rule>
+    <from-view-id>/search.jspx</from-view-id>
+    <navigation-case>
+      <from-outcome>browse</from-outcome>
+      <to-view-id>/browse.jspx</to-view-id>
+    </navigation-case>
+  </navigation-rule>
+  <application>
+    <default-render-kit-id>oracle.adf.rich</default-render-kit-id>
+  </application>
+</faces-config>

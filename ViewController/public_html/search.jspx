@@ -1,0 +1,55 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <f:view>
+        <af:document title="search.jspx" id="d1">
+            <af:messages id="m1"/>
+            <af:form id="f1">
+                <af:panelGridLayout id="pgl1">
+                    <af:gridRow height="100%" id="gr1">
+                        <af:gridCell width="100%" halign="stretch" valign="stretch" id="gc1">
+                            <af:decorativeBox theme="dark" id="db1">
+                                <f:facet name="center">
+                                    <af:decorativeBox theme="medium" id="db2">
+                                        <f:facet name="center">
+                                            <!-- Content -->
+                                            <af:panelGroupLayout layout="vertical" id="pgl2">
+                                                <af:panelHeader text="categoryFindAll" id="ph1">
+                                                    <af:query id="qryId1" headerText="Search" disclosed="true"
+                                                              value="#{bindings.ImplicitViewCriteriaQuery.queryDescriptor}"
+                                                              model="#{bindings.ImplicitViewCriteriaQuery.queryModel}"
+                                                              queryListener="#{bindings.ImplicitViewCriteriaQuery.processQuery}"
+                                                              queryOperationListener="#{bindings.ImplicitViewCriteriaQuery.processQueryOperation}"
+                                                              resultComponentId="::resId1"/>
+                                                </af:panelHeader>
+                                                <af:table value="#{bindings.categoryFindAll.collectionModel}" var="row"
+                                                          rows="#{bindings.categoryFindAll.rangeSize}"
+                                                          emptyText="#{bindings.categoryFindAll.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                                          rowBandingInterval="0"
+                                                          fetchSize="#{bindings.categoryFindAll.rangeSize}" id="resId1">
+                                                    <af:column headerText="#{bindings.categoryFindAll.hints.id.label}"
+                                                               id="resId1c1">
+                                                        <af:outputText value="#{row.id}"
+                                                                       shortDesc="#{bindings.categoryFindAll.hints.id.tooltip}"
+                                                                       id="ot1"/>
+                                                    </af:column>
+                                                    <af:column headerText="#{bindings.categoryFindAll.hints.name.label}"
+                                                               id="resId1c2">
+                                                        <af:outputText value="#{row.name}"
+                                                                       shortDesc="#{bindings.categoryFindAll.hints.name.tooltip}"
+                                                                       id="ot2"/>
+                                                    </af:column>
+                                                </af:table>
+                                            </af:panelGroupLayout>
+                                        </f:facet>
+                                    </af:decorativeBox>
+                                </f:facet>
+                            </af:decorativeBox>
+                        </af:gridCell>
+                    </af:gridRow>
+                </af:panelGridLayout>
+            </af:form>
+        </af:document>
+    </f:view>
+</jsp:root>

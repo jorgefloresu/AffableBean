@@ -1,0 +1,86 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<SDM>
+   <OverallProperties
+      id="OverallProperties1"/>
+   <Page
+      id="Page2">
+      <property
+         name="jspName">/browse.jspx</property>
+      <property
+         name="x">118.0</property>
+      <property
+         name="y">200.60156</property>
+      <property
+         name="wildcard">false</property>
+   </Page>
+   <Page
+      id="Page3">
+      <property
+         name="jspName">/query.jspx</property>
+      <property
+         name="x">275.0</property>
+      <property
+         name="y">69.46875</property>
+      <property
+         name="wildcard">false</property>
+   </Page>
+   <Page
+      id="Page4">
+      <property
+         name="jspName">/search.jspx</property>
+      <property
+         name="x">221.0</property>
+      <property
+         name="y">351.60156</property>
+      <property
+         name="wildcard">false</property>
+   </Page>
+   <NavigationCase
+      islink="true"
+      id="NavigationCase5"
+      from="Page2"
+      to="Page3">
+      <property
+         name="description">Navigation Case</property>
+      <property
+         name="fromOutcome">query</property>
+      <property
+         name="sdm:polyPoints">T44,114.5,142.78232,231.92781,65.90234,L46</property>
+   </NavigationCase>
+   <NavigationCase
+      islink="true"
+      id="NavigationCase6"
+      from="Page3"
+      to="Page2">
+      <property
+         name="description">Navigation Case</property>
+      <property
+         name="fromOutcome">browse</property>
+      <property
+         name="sdm:polyPoints">L54,234.0,72.90234,128.5,146.53516,T67</property>
+   </NavigationCase>
+   <NavigationCase
+      islink="true"
+      id="NavigationCase7"
+      from="Page2"
+      to="Page4">
+      <property
+         name="description">Navigation Case</property>
+      <property
+         name="fromOutcome">search</property>
+      <property
+         name="sdm:polyPoints">B44,114.5,259.19833,217.5,297.53516,T44</property>
+   </NavigationCase>
+   <NavigationCase
+      islink="true"
+      id="NavigationCase8"
+      from="Page4"
+      to="Page2">
+      <property
+         name="description">Navigation Case</property>
+      <property
+         name="fromOutcome">browse</property>
+      <property
+         name="sdm:polyPoints">B56,23.5,87.0,114.5,142.7498,T44</property>
+   </NavigationCase>
+</SDM>

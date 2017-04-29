@@ -1,0 +1,356 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<table xmlns="http://xmlns.oracle.com/jdeveloper/1211/offlinedb">
+  <name>ordered_product</name>
+  <columns>
+    <column>
+      <name>customer_order_id</name>
+      <dataTypeUsage>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">10</value>
+          </entry>
+          <entry>
+            <key>unsigned</key>
+            <value class="java.lang.String">UNSIGNED</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <typeName>INT</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>customer_order_id</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>ordered_product</name>
+              <schemaName>affablebean</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <name>product_id</name>
+      <dataTypeUsage>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">10</value>
+          </entry>
+          <entry>
+            <key>unsigned</key>
+            <value class="java.lang.String">UNSIGNED</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <typeName>INT</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>product_id</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>ordered_product</name>
+              <schemaName>affablebean</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <name>quantity</name>
+      <dataTypeUsage>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">5</value>
+          </entry>
+          <entry>
+            <key>unsigned</key>
+            <value class="java.lang.String">UNSIGNED</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <typeName>SMALLINT</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <default class="java.lang.String">1</default>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>quantity</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>ordered_product</name>
+              <schemaName>affablebean</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+  </columns>
+  <constraints>
+    <constraint class="oracle.javatools.db.FKConstraint">
+      <name>fk_ordered_product_customer_order1</name>
+      <columnIDs>
+        <columnID class="oracle.javatools.db.NameBasedID">
+          <name>customer_order_id</name>
+          <parent class="oracle.javatools.db.NameBasedID">
+            <name>ordered_product</name>
+            <schemaName>affablebean</schemaName>
+            <type>TABLE</type>
+          </parent>
+          <schemaName>affablebean</schemaName>
+          <type>COLUMN</type>
+        </columnID>
+      </columnIDs>
+      <enabled>true</enabled>
+      <onDeleteAction>NO_ACTION</onDeleteAction>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>fk_ordered_product_customer_order1</name>
+            <childObjectNames>
+              <childObjectName>customer_order_id</childObjectName>
+            </childObjectNames>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>ordered_product</name>
+              <schemaName>affablebean</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <subType>FKConstraint</subType>
+            <type>CONSTRAINT</type>
+          </value>
+        </entry>
+      </properties>
+      <referenceID class="oracle.javatools.db.NameBasedID">
+        <name>PRIMARY</name>
+        <parent class="oracle.javatools.db.NameBasedID">
+          <name>customer_order</name>
+          <schemaName>affablebean</schemaName>
+          <type>TABLE</type>
+        </parent>
+        <schemaName>affablebean</schemaName>
+        <type>CONSTRAINT</type>
+      </referenceID>
+    </constraint>
+    <constraint class="oracle.javatools.db.FKConstraint">
+      <name>fk_ordered_product_product1</name>
+      <columnIDs>
+        <columnID class="oracle.javatools.db.NameBasedID">
+          <name>product_id</name>
+          <parent class="oracle.javatools.db.NameBasedID">
+            <name>ordered_product</name>
+            <schemaName>affablebean</schemaName>
+            <type>TABLE</type>
+          </parent>
+          <schemaName>affablebean</schemaName>
+          <type>COLUMN</type>
+        </columnID>
+      </columnIDs>
+      <enabled>true</enabled>
+      <onDeleteAction>NO_ACTION</onDeleteAction>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>fk_ordered_product_product1</name>
+            <childObjectNames>
+              <childObjectName>product_id</childObjectName>
+            </childObjectNames>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>ordered_product</name>
+              <schemaName>affablebean</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <subType>FKConstraint</subType>
+            <type>CONSTRAINT</type>
+          </value>
+        </entry>
+      </properties>
+      <referenceID class="oracle.javatools.db.NameBasedID">
+        <name>PRIMARY</name>
+        <parent class="oracle.javatools.db.NameBasedID">
+          <name>product</name>
+          <schemaName>affablebean</schemaName>
+          <type>TABLE</type>
+        </parent>
+        <schemaName>affablebean</schemaName>
+        <type>CONSTRAINT</type>
+      </referenceID>
+    </constraint>
+    <constraint class="oracle.javatools.db.PKConstraint">
+      <name>PRIMARY</name>
+      <columnIDs>
+        <columnID class="oracle.javatools.db.NameBasedID">
+          <name>customer_order_id</name>
+          <parent class="oracle.javatools.db.NameBasedID">
+            <name>ordered_product</name>
+            <schemaName>affablebean</schemaName>
+            <type>TABLE</type>
+          </parent>
+          <schemaName>affablebean</schemaName>
+          <type>COLUMN</type>
+        </columnID>
+        <columnID class="oracle.javatools.db.NameBasedID">
+          <name>product_id</name>
+          <parent class="oracle.javatools.db.NameBasedID">
+            <name>ordered_product</name>
+            <schemaName>affablebean</schemaName>
+            <type>TABLE</type>
+          </parent>
+          <schemaName>affablebean</schemaName>
+          <type>COLUMN</type>
+        </columnID>
+      </columnIDs>
+      <enabled>true</enabled>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>PRIMARY</name>
+            <childObjectNames>
+              <childObjectName>customer_order_id</childObjectName>
+              <childObjectName>product_id</childObjectName>
+            </childObjectNames>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>ordered_product</name>
+              <schemaName>affablebean</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <subType>PKConstraint</subType>
+            <type>CONSTRAINT</type>
+          </value>
+        </entry>
+      </properties>
+    </constraint>
+  </constraints>
+  <indexes>
+    <index>
+      <name>fk_ordered_product_customer_order1_idx</name>
+      <columnExpressions>
+        <columnExpression>
+          <expressionSource>customer_order_id</expressionSource>
+          <orderType>ASC</orderType>
+          <properties>
+            <entry>
+              <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+              <value class="oracle.javatools.db.ReferenceID">
+                <name>customer_order_id</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>fk_ordered_product_customer_order1_idx</name>
+                  <parent class="oracle.javatools.db.ReferenceID">
+                    <name>ordered_product</name>
+                    <schemaName>affablebean</schemaName>
+                    <type>TABLE</type>
+                  </parent>
+                  <schemaName>affablebean</schemaName>
+                  <type>INDEX</type>
+                </parent>
+                <type>IndexObject</type>
+              </value>
+            </entry>
+          </properties>
+        </columnExpression>
+      </columnExpressions>
+      <indexType>NORMAL</indexType>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>fk_ordered_product_customer_order1_idx</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>ordered_product</name>
+              <schemaName>affablebean</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <schemaName>affablebean</schemaName>
+            <type>INDEX</type>
+          </value>
+        </entry>
+      </properties>
+      <schema>
+        <name>affablebean</name>
+      </schema>
+    </index>
+    <index>
+      <name>fk_ordered_product_product1_idx</name>
+      <columnExpressions>
+        <columnExpression>
+          <expressionSource>product_id</expressionSource>
+          <orderType>ASC</orderType>
+          <properties>
+            <entry>
+              <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+              <value class="oracle.javatools.db.ReferenceID">
+                <name>product_id</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>fk_ordered_product_product1_idx</name>
+                  <parent class="oracle.javatools.db.ReferenceID">
+                    <name>ordered_product</name>
+                    <schemaName>affablebean</schemaName>
+                    <type>TABLE</type>
+                  </parent>
+                  <schemaName>affablebean</schemaName>
+                  <type>INDEX</type>
+                </parent>
+                <type>IndexObject</type>
+              </value>
+            </entry>
+          </properties>
+        </columnExpression>
+      </columnExpressions>
+      <indexType>NORMAL</indexType>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>fk_ordered_product_product1_idx</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>ordered_product</name>
+              <schemaName>affablebean</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <schemaName>affablebean</schemaName>
+            <type>INDEX</type>
+          </value>
+        </entry>
+      </properties>
+      <schema>
+        <name>affablebean</name>
+      </schema>
+    </index>
+  </indexes>
+  <properties>
+    <entry>
+      <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+      <value class="oracle.javatools.db.ReferenceID">
+        <name>ordered_product</name>
+        <schemaName>affablebean</schemaName>
+        <type>TABLE</type>
+      </value>
+    </entry>
+    <entry>
+      <key>TableType</key>
+      <value class="oracle.javatools.db.Table$TableType">NORMAL</value>
+    </entry>
+  </properties>
+  <schema>
+    <name>affablebean</name>
+  </schema>
+</table>

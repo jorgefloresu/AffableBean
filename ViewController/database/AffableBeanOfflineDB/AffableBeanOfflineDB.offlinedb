@@ -1,0 +1,10 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<ProviderSettings xmlns="http://xmlns.oracle.com/ide/hash">
+   <hash n="dataTypeSettings">
+      <value n="databaseType" v="MySQL"/>
+      <value n="databaseVersion" v="50"/>
+   </hash>
+   <value n="id" v="548699e1-e184-4372-9ce1-4140cd39741f"/>
+   <value n="name" v="AffableBeanOfflineDB"/>
+   <value n="offlineDBSchema" v="affablebean"/>
+</ProviderSettings>

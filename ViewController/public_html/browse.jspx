@@ -1,0 +1,165 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <f:view>
+        <af:document title="browse.jspx" id="d1">
+            <af:messages id="m1"/>
+            <af:form id="f1">
+                <af:panelGridLayout id="pgl1">
+                    <af:gridRow height="100%" id="gr1">
+                        <af:gridCell width="100%" halign="stretch" valign="stretch" id="gc1">
+                            <af:decorativeBox theme="dark" id="db1">
+                                <f:facet name="center">
+                                    <af:decorativeBox theme="medium" id="db2">
+                                        <f:facet name="center">
+                                            <!-- Content -->
+                                            <af:panelStretchLayout id="psl1" inlineStyle="width:600px; height:400px"
+                                                                   topHeight="49px">
+                                                <f:facet name="start"/>
+                                                <f:facet name="end"/>
+                                                <f:facet name="top">
+                                                    <af:menuBar id="mb1">
+                                                        <af:menu text="Options" id="m2" detachable="true">
+                                                            <af:commandMenuItem text="Query" id="cmi1" action="query"/>
+                                                            <af:commandMenuItem text="Search" id="cmi2"
+                                                                                action="search"/>
+                                                        </af:menu>
+                                                    </af:menuBar>
+                                                </f:facet>
+                                                <f:facet name="bottom"/>
+                                                <f:facet name="center">
+                                                    <af:panelSplitter id="ps1" orientation="vertical"
+                                                                      splitterPosition="120">
+                                                        <f:facet name="first">
+                                                            <af:panelFormLayout id="pfl1">
+                                                                <af:inputText value="#{bindings.id.inputValue}"
+                                                                              label="#{bindings.id.hints.label}"
+                                                                              required="#{bindings.id.hints.mandatory}"
+                                                                              readOnly="true"
+                                                                              columns="#{bindings.id.hints.displayWidth}"
+                                                                              maximumLength="#{bindings.id.hints.precision}"
+                                                                              shortDesc="#{bindings.id.hints.tooltip}"
+                                                                              id="it1">
+                                                                    <f:validator binding="#{bindings.id.validator}"/>
+                                                                </af:inputText>
+                                                                <af:inputText value="#{bindings.name.inputValue}"
+                                                                              label="#{bindings.name.hints.label}"
+                                                                              required="#{bindings.name.hints.mandatory}"
+                                                                              readOnly="true"
+                                                                              columns="#{bindings.name.hints.displayWidth}"
+                                                                              maximumLength="#{bindings.name.hints.precision}"
+                                                                              shortDesc="#{bindings.name.hints.tooltip}"
+                                                                              id="it2">
+                                                                    <f:validator binding="#{bindings.name.validator}"/>
+                                                                </af:inputText>
+                                                                <f:facet name="footer">
+                                                                    <af:panelGroupLayout layout="horizontal" id="pgl2">
+                                                                        <af:button actionListener="#{bindings.First.execute}"
+                                                                                   text="First"
+                                                                                   disabled="#{!bindings.First.enabled}"
+                                                                                   partialSubmit="true" id="b1"/>
+                                                                        <af:button actionListener="#{bindings.Previous.execute}"
+                                                                                   text="Previous"
+                                                                                   disabled="#{!bindings.Previous.enabled}"
+                                                                                   partialSubmit="true" id="b2"/>
+                                                                        <af:button actionListener="#{bindings.Next.execute}"
+                                                                                   text="Next"
+                                                                                   disabled="#{!bindings.Next.enabled}"
+                                                                                   partialSubmit="true" id="b3"/>
+                                                                        <af:button actionListener="#{bindings.Last.execute}"
+                                                                                   text="Last"
+                                                                                   disabled="#{!bindings.Last.enabled}"
+                                                                                   partialSubmit="true" id="b4"/>
+                                                                    </af:panelGroupLayout>
+                                                                </f:facet>
+                                                            </af:panelFormLayout>
+                                                        </f:facet>
+                                                        <f:facet name="second">
+                                                            <af:panelCollection id="pc1">
+                                                                <f:facet name="menus"/>
+                                                                <f:facet name="toolbar"/>
+                                                                <f:facet name="statusbar"/>
+                                                                <af:table value="#{bindings.productCollection.collectionModel}"
+                                                                          var="row"
+                                                                          rows="#{bindings.productCollection.rangeSize}"
+                                                                          emptyText="#{bindings.productCollection.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                                                          rowBandingInterval="0"
+                                                                          selectedRowKeys="#{bindings.productCollection.collectionModel.selectedRow}"
+                                                                          selectionListener="#{bindings.productCollection.collectionModel.makeCurrent}"
+                                                                          rowSelection="single"
+                                                                          fetchSize="#{bindings.productCollection.rangeSize}"
+                                                                          filterModel="#{bindings.productCollectionQuery.queryDescriptor}"
+                                                                          filterVisible="true"
+                                                                          queryListener="#{bindings.productCollectionQuery.processQuery}"
+                                                                          varStatus="vs" id="t1"
+                                                                          columnSelection="single"
+                                                                          partialTriggers=":::b1 :::b2 :::b3 :::b4">
+                                                                    <af:column sortProperty="#{bindings.productCollection.hints.description.name}"
+                                                                               filterable="true" sortable="true"
+                                                                               headerText="#{bindings.productCollection.hints.description.label}"
+                                                                               id="c1">
+                                                                        <af:outputText value="#{row.description}"
+                                                                                       shortDesc="#{bindings.productCollection.hints.description.tooltip}"
+                                                                                       id="ot1"/>
+                                                                    </af:column>
+                                                                    <af:column sortProperty="#{bindings.productCollection.hints.id.name}"
+                                                                               filterable="true" sortable="true"
+                                                                               headerText="#{bindings.productCollection.hints.id.label}"
+                                                                               id="c2">
+                                                                        <af:outputText value="#{row.id}"
+                                                                                       shortDesc="#{bindings.productCollection.hints.id.tooltip}"
+                                                                                       id="ot2"/>
+                                                                    </af:column>
+                                                                    <af:column sortProperty="#{bindings.productCollection.hints.last_update.name}"
+                                                                               filterable="true" sortable="true"
+                                                                               headerText="#{bindings.productCollection.hints.last_update.label}"
+                                                                               id="c3">
+                                                                        <f:facet name="filter">
+                                                                            <af:inputDate value="#{bindings.productCollectionQuery.queryDescriptor.filterConjunctionCriterion.criterionMap.last_update.value}"
+                                                                                          id="id1">
+                                                                                <af:convertDateTime pattern="#{bindings.productCollection.hints.last_update.format}"/>
+                                                                            </af:inputDate>
+                                                                        </f:facet>
+                                                                        <af:outputText value="#{row.last_update}"
+                                                                                       shortDesc="#{bindings.productCollection.hints.last_update.tooltip}"
+                                                                                       id="ot3">
+                                                                            <af:convertDateTime pattern="#{bindings.productCollection.hints.last_update.format}"/>
+                                                                        </af:outputText>
+                                                                    </af:column>
+                                                                    <af:column sortProperty="#{bindings.productCollection.hints.name.name}"
+                                                                               filterable="true" sortable="true"
+                                                                               headerText="#{bindings.productCollection.hints.name.label}"
+                                                                               id="c4">
+                                                                        <af:outputText value="#{row.name}"
+                                                                                       shortDesc="#{bindings.productCollection.hints.name.tooltip}"
+                                                                                       id="ot4"/>
+                                                                    </af:column>
+                                                                    <af:column sortProperty="#{bindings.productCollection.hints.price.name}"
+                                                                               filterable="true" sortable="true"
+                                                                               headerText="#{bindings.productCollection.hints.price.label}"
+                                                                               id="c5">
+                                                                        <af:outputText value="#{row.price}"
+                                                                                       shortDesc="#{bindings.productCollection.hints.price.tooltip}"
+                                                                                       id="ot5">
+                                                                            <af:convertNumber groupingUsed="false"
+                                                                                              pattern="#{bindings.productCollection.hints.price.format}"/>
+                                                                        </af:outputText>
+                                                                    </af:column>
+                                                                </af:table>
+                                                            </af:panelCollection>
+                                                        </f:facet>
+                                                    </af:panelSplitter>
+                                                </f:facet>
+                                            </af:panelStretchLayout>
+                                        </f:facet>
+                                    </af:decorativeBox>
+                                </f:facet>
+                            </af:decorativeBox>
+                        </af:gridCell>
+                    </af:gridRow>
+                </af:panelGridLayout>
+            </af:form>
+        </af:document>
+    </f:view>
+</jsp:root>
